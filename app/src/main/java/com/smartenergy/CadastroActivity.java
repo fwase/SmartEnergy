@@ -47,7 +47,7 @@ public class CadastroActivity extends AppCompatActivity {
                 double kwH = Double.parseDouble(editTextKwH.getText().toString());
                 double valorLim = Double.parseDouble(editTextValorLim.getText().toString());
 
-                usuario = new Usuario(0, login, senha, nome, kwH, valorLim);
+                usuario = new Usuario(0, login, senha, nome, kwH, valorLim, 0);
                 if(usuarioDAO.fazerCadastro(usuario)){
                     Toast.makeText(this, "Cadastro realizado com sucesso!", Toast.LENGTH_LONG).show();
                     finish();

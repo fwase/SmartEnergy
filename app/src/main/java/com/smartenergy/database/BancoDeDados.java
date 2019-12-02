@@ -6,14 +6,18 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class BancoDeDados extends SQLiteOpenHelper {
-    public static final int DATABASE_VERSION = 2;
+    public static final int DATABASE_VERSION = 5;
     public static final String DATABASE_NAME = "User.db";
-    public static final String SQL_CREATE_TABLES = "CREATE TABLE Usuarios(" +
-          "user_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, login TEXT NOT NULL, " +
-            "senha TEXT NOT NULL, nome TEXT, kw_hora REAL, valor_limite REAL)";
+    public static final String SQL_CREATE_TABLE_USUARIOS = "CREATE TABLE Usuarios(" +
+          "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, login TEXT NOT NULL, " +
+            "senha TEXT NOT NULL, nome TEXT, kw_hora REAL, valor_limite REAL, tempo_segundos INTEGER);";
+    public static final String SQL_CREATE_TABLE_CONSUMO =
+            "CREATE TABLE Consumo (user_id INTEGER, data_hora TEXT, watts REAL," +
+            "FOREIGN KEY (user_id) REFERENCES Usuarios(id));";
     public static final String SQL_POPULATE_TABLES = "INSERT INTO Usuarios " +
-            "VALUES (NULL,'admin', '123', 'Ciro Miranda', 1.07, 500.0)";
-    public static final String SQL_DELETE_TABLES = "DROP TABLE IF EXISTS Usuarios";
+            "VALUES (NULL,'admin', '123', 'Ciro', 0.80, 50.0, 0)";
+    public static final String SQL_DELETE_TABLE_USUARIOS = "DROP TABLE IF EXISTS Usuarios";
+    public static final String SQL_DELETE_TABLE_CONSUMO = "DROP TABLE IF EXISTS Consumo";
 
     public BancoDeDados(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -22,17 +26,20 @@ public class BancoDeDados extends SQLiteOpenHelper {
     // Executado ao criar o BD
     @Override
     public void onCreate(SQLiteDatabase db) {
-        Log.i("ABC","BD INICIOU?");
-        db.execSQL(SQL_CREATE_TABLES);
-        Log.i("ABC","CRIOU TABELA!");
+        Log.d("ABC","BD INICIOU?");
+        db.execSQL(SQL_CREATE_TABLE_USUARIOS);
+        Log.d("ABC","CRIOU TABELA USUARIOS!");
+        db.execSQL(SQL_CREATE_TABLE_CONSUMO);
+        Log.d("ABC","CRIOU TABELA CONSUMO!");
         db.execSQL(SQL_POPULATE_TABLES);
-        Log.i("ABC","POPULOU TABELA!");
+        Log.d("ABC","POPULOU TABELA!");
     }
 
     // Executado ao atualizar o DB
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL(SQL_DELETE_TABLES);
+        db.execSQL(SQL_DELETE_TABLE_USUARIOS);
+        db.execSQL(SQL_DELETE_TABLE_CONSUMO);
         onCreate(db);
     }
 }

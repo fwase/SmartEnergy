@@ -17,6 +17,92 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
+        <ScrollView
+            android:layout_width="346dp"
+            android:layout_height="245dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pieChart">>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/buttonLamp0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="lamp0"
+                    android:text="LÂMPADA 0 ON/OFF" />
+
+                <Button
+                    android:id="@+id/buttonLamp1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="lamp1"
+                    android:text="LÂMPADA 1 ON/OFF" />
+
+                <Button
+                    android:id="@+id/buttonLamp2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="lamp2"
+                    android:text="LÂMPADA 2 ON/OFF" />
+
+                <Button
+                    android:id="@+id/buttonLamp3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="lamp3"
+                    android:text="LÂMPADA 3 ON/OFF" />
+
+                <Button
+                    android:id="@+id/buttonLamp4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="lamp4"
+                    android:text="LÂMPADA 4 ON/OFF" />
+
+                <Button
+                    android:id="@+id/buttonLamp5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="lamp5"
+                    android:text="LÂMPADA 5 ON/OFF" />
+
+                <Button
+                    android:id="@+id/buttonLamp6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="lamp6"
+                    android:text="LÂMPADA 6 ON/OFF" />
+
+                <Button
+                    android:id="@+id/buttonLamp7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="lamp7"
+                    android:text="LÂMPADA 7 ON/OFF" />
+
+                <Button
+                    android:id="@+id/buttonDesligarTodos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="lampDesligaTodos"
+                    android:text="DESLIGAR TODOS" />
+
+                <Button
+                    android:id="@+id/buttonLigarTodos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="lampLigaTodos"
+                    android:text="LIGAR TODOS" />
+
+            </LinearLayout>
+        </ScrollView>
+
         <TextView
             android:id="@+id/textBemVindo"
             android:layout_width="wrap_content"
@@ -34,10 +120,10 @@
             android:id="@+id/pieChart"
             android:layout_width="361dp"
             android:layout_height="248dp"
-            android:layout_marginBottom="296dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="58dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

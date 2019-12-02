@@ -7,14 +7,16 @@ public class Usuario implements Serializable {
     private int user_id;
     private String login, senha, name;
     private double kw_hora, valor_limite;
+    private int tempo_segundos;
 
-    public Usuario(int user_id, String login, String senha, String name, double kw_hora, double valor_limite) {
+    public Usuario(int user_id, String login, String senha, String name, double kw_hora, double valor_limite, int tempo_segundos) {
         this.user_id = user_id;
         this.login = login;
         this.senha = senha;
         this.name = name;
         this.kw_hora = kw_hora;
         this.valor_limite = valor_limite;
+        this.tempo_segundos = tempo_segundos;
     }
 
     public int getUserId() {
@@ -63,5 +65,13 @@ public class Usuario implements Serializable {
 
     public void setValorLimite(double valor_limite) {
         this.valor_limite = valor_limite;
+    }
+
+    public int getTempo_segundos() {
+        return tempo_segundos;
+    }
+
+    public void setTempo_segundos(int tempo_segundos) {
+        this.tempo_segundos = tempo_segundos;
     }
 }
