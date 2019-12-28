@@ -5,10 +5,8 @@ O ESP8266 produzirá dados de consumo de energia e enviará para um aplicativo, 
 
 Vale ressaltar que o aplicativo foi feito em **Android Nativo com Java**.
 
-O projeto ainda está em andamento.
-
 ## Screenshots
-![](screenshots/Screenshot_20191101-125756.png)
+<img src="screenshots/Screenshot_20191228-131534.png" width="220">
 
 ## Libraries
 Este app utiliza as seguintes bibliotecas de terceiros:
